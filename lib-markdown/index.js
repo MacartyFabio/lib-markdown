@@ -16,8 +16,10 @@ function handleError(error) {
 }
 
 async function getFile(filepath) {
-  const encoding = 'utf-8';
+  const encoding = 'utf-8'
+
   try {
+  
     const text = await fs.promises.readFile(filepath, encoding)
     return extractLinks(text);
   } catch(error) {
